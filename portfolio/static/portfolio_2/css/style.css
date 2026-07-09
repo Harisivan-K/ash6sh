@@ -379,12 +379,10 @@ body::before{
     position: absolute;
     left: 35px;
     right: 35px;
-    bottom: 80px;   /* Above the video timeline */
+    bottom: 55px;   /* Try 55px */
     z-index: 2;
-
     background: transparent;
     padding: 0;
-
     pointer-events: none;
 }
 
@@ -831,9 +829,9 @@ body::before{
 
     .work-info{
         position: absolute;
-        left: 18px;
-        right: 18px;
-        bottom: 70px;   /* Above the video controls */
+        left: 20px;
+        right: 20px;
+        bottom: 50px;   /* Above the video controls */
         z-index: 2;
         background: transparent;
         pointer-events: none;
