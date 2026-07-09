@@ -11,19 +11,18 @@ let mx = window.innerWidth / 2;
 let my = window.innerHeight / 2;
 
 /* Desktop */
-document.addEventListener("mousemove",(e)=>{
+document.addEventListener("mousemove", (e) => {
     mx = e.clientX;
     my = e.clientY;
 });
 
 /* Mobile */
-document.addEventListener("touchmove",(e)=>{
+document.addEventListener("touchmove", (e) => {
     mx = e.touches[0].clientX;
     my = e.touches[0].clientY;
 });
 
-function animate(){
-
+function animate() {
     x += (mx - x) * 0.08;
     y += (my - y) * 0.08;
 
@@ -35,6 +34,7 @@ function animate(){
 
 animate();
 
+const changingText = document.getElementById("changing-text");
 
 const texts = [
     "LET'S WORK TOGETHER",
@@ -47,6 +47,18 @@ const texts = [
 let index = 0;
 
 setInterval(() => {
-    index = (index + 1) % texts.length;
-    document.getElementById("changing-text").textContent = texts[index];
+    // Animate out
+    changingText.style.opacity = "0";
+    changingText.style.transform = "translateY(-15px)";
+
+    setTimeout(() => {
+        // Change text
+        index = (index + 1) % texts.length;
+        changingText.textContent = texts[index];
+
+        // Animate in
+        changingText.style.opacity = "1";
+        changingText.style.transform = "translateY(0)";
+    }, 300);
+
 }, 2500);
