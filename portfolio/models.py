@@ -1,4 +1,6 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
+
 
 
 class Project(models.Model):
@@ -19,11 +21,11 @@ class Project(models.Model):
         null=True
     )
 
-    video = models.FileField(
-        upload_to="videos/",
-        blank=True,
-        null=True
-    )
+    video = CloudinaryField(
+    resource_type="video",
+    blank=True,
+    null=True
+)
 
     created_at = models.DateTimeField(auto_now_add=True)
 
