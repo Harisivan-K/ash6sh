@@ -165,8 +165,13 @@
                 {% endif %}
 
                 <div class="work-info">
-                    <h3>{{ project.title }}</h3>
-                    <p>{{ project.description }}</p>
+                    {% if project.title %}
+<h3>{{ project.title }}</h3>
+{% endif %}
+
+{% if project.description %}
+<p>{{ project.description }}</p>
+{% endif %}
                 </div>
 
             </div>
